@@ -1,3 +1,5 @@
 numpy
 pandas
 opencv-python
+svgwrite
+pyinstaller
