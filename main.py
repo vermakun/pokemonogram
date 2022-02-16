@@ -213,19 +213,19 @@ def create_svg(name, grid, w, h, pad):
     hpx = hp*px
     
     # Instantiate SVG
-    dwg = svgwrite.Drawing(filename=name, debug=True)
+    dwg = svgwrite.Drawing(filename=name, debug=True, size=('180%','300%'))
 
     # Draw min tick grid
     mingrid = dwg.add(dwg.g(id='mingrid', stroke='black', stroke_width=1))
-    for y in range(wp):
+    for y in range(wp+5):
         mingrid.add(dwg.line(start=(0*cm, y*cm), end=(wp*cm, y*cm)))
     
-    for x in range(hp):
+    for x in range(hp+1):
         mingrid.add(dwg.line(start=(x*cm, 0*cm), end=(x*cm, hp*cm)))
 
     # Draw max tick grid
     maxgrid = dwg.add(dwg.g(id='maxgrid', stroke='red', stroke_width=2))
-    for y in range(round(w/5)):
+    for y in range(round(2+w/5)):
         maxgrid.add(dwg.line(start=(0*cm, (5*y+pad)*cm), end=(wp*cm, (5*y+pad)*cm)))
 
     for x in range(round(h/5)):
