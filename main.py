@@ -5,7 +5,7 @@
 (1) http://gambiter.com/puzzle/Nonogram.html
 
 Author(s): Kunaal Verma (https://github.com/vermakun)
-Revision: 0.2.1 - 2022.02.15
+Revision: 0.2.2 - 2022.02.16
 """
 
 import os
@@ -206,8 +206,7 @@ def create_svg(name, grid, w, h, pad):
     wp = w + pad
     hp = h + pad
 
-    lw = 1
-    px = 2*lw + 8
+    px = 10
 
     wpx = wp*px
     hpx = hp*px
